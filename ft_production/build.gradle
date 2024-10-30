@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'com.intershop.icm.cartridge.product'
+}
+
+description = 'Runnable Feature - all headless cartridges'
+
+dependencies {
+
+    cartridgeRuntime "com.intershop.icm:ft_icm_as"
+
+    cartridgeRuntime "com.intershop.solrcloud:ac_solr_cloud"
+    cartridgeRuntime "com.intershop.solrcloud:ac_solr_cloud_bo"
+
+    // pwa
+    cartridgeRuntime "com.intershop.headless:app_sf_pwa_cm"
+    
+    // add your production cartridge here
+    cartridgeRuntime project(":my_cartridge")
+}
